@@ -7,7 +7,7 @@ This project is an Assigment for "Reproducible Research", University of Warsaw F
 ## Authors 
 
 - [Gabriele Stella](g.stella@student.uw.edu.pl)
-- [Kevin Pan](w.pan2@student.uw.edu.pl)
+- [Weida Pan](w.pan2@student.uw.edu.pl)
 - [Karan Kashyap](k.kashyap@student.uw.edu.pl)
 
 ## Reproducible Envoirment
