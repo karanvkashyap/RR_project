@@ -1,0 +1,124 @@
+---
+title: 'Time Series Minimum Wage Studies Meta-Analysis - Report'
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: true
+      smooth_scroll: false
+author: 'Gabriele Stella, Weida Pan, Karan Kashyap'
+date:      June, 2022
+fontsize:  9 pt  
+---
+
+```{r, echo = F}
+load('Data/Environment_HTML.Rdata')
+library(kableExtra)
+```
+
+# 1 Introduction
+
+*Card and Krueger research* at least 30/35 rows. 
+
+## 1_1 Data Summarize {.tabset}
+
+### 1_1_1 Card and Krueger's Data. 
+
+```{r, echo = F}
+
+kable(head(dt, 15), booktabs = TRUE) %>%
+  kable_styling(font_size = 11)
+
+```
+
+### 1_1_2 Our implementation.  
+```{r, echo = F}
+kable(head(dt [16:18, 1:14]), booktabs = TRUE) %>%
+  kable_styling(font_size = 11)
+
+```
+
+### 1_1_3 Meta analysis Data Frame 
+
+```{r, echo = F}
+kable(head(dt, 18), booktabs = TRUE) %>%
+  kable_styling(font_size = 11)
+
+```
+
+## 1_2 Variable
+
+as we can see they used a set of 15 studies and we went to implement with three studies most recent. 
+
+the variable that they use was 12: 
+
+- consists of the author(s), 
+- date of publication (year), 
+- t-statistic in absolute terms1 (t_stat), 
+- degrees of freedom (df), 
+- coefficient of the minimum wage variable in absolute terms2 (coef), 
+- number of explanatory variables of the model (no_exp_var), 
+- the error of the model (error) `[also log and sqrt_log of error.]`
+- and three dummy varibale: 
+  - log_spec
+    - this variable is set to 1 when the author used a logarithmic specification for the model
+  - autoreg_correction
+    - this is set to 1, when the autoregression correction was applied
+  - teen_subsample
+    - this variable is set to one when the authors used a teen sumbsample, unfortunatly we didn't find enough information to fill the missing data. 
+  
+
+  
+# 2 Reproducing Part
+
+the authors implemented this study focusing on three cases: 
+
+## 2_1 Relation of Estimated t-Ratio to Sample Size 
+```{r, echo = F, fig.width = 6, fig.height = 4}
+fig_1_old
+```
+
+## 2_2 Descreptive Regression Models 
+<img src="data/tbl 1.png"/>
+
+
+## 2_3 Relation of Estimated Employment to Standard Error
+
+```{r, echo = F}
+fig_2_old
+```
+
+# 3 Implementation 
+
+Our assignment doesn't concern just the reproducing part, but now we want to implement the same study implemented with our data. 
+
+## 3_1 Relation of Estimated t-Ratio to Sample Size- Implemented
+
+```{r, echo = F, fig.width = 6, fig.height = 4}
+fig_1_new
+```
+
+## 3_2 Descreptive Regression Models- Implemented
+<img src="data/tbl 2.png"/>
+
+## 3_3 Relation of Estimated Employment to Standard Error- Implemented
+
+```{r, echo = F, fig.width = 6, fig.height = 4}
+fig_2_new
+```
+
+  
+# 4 conclusion
+
+# reference
+  
+
+
+
+  
+
+
+
+
+
+
