@@ -8,7 +8,6 @@ output:
       smooth_scroll: false
 author: 'Gabriele Stella, Weida Pan, Karan Kashyap'
 date:      June, 2022
-fontsize:  9 pt  
 ---
 
 ```{r, echo = F}
@@ -16,13 +15,40 @@ load('Data/Environment_HTML.Rdata')
 library(kableExtra)
 ```
 
-# 1 Introduction
 
-*Card and Krueger research* at least 30/35 rows. 
+# *Card and Krueger*'s Meta-Analysis 
+A Meta-Analysis, is directed to use the main results about the same argument and verify is the conclusion works also in aggregate, thanks to this analysis we can also test a series of publication bias. 
 
-## 1_1 Data Summarize {.tabset}
+In fact, in this works *card and Krueger* went to test what they called “*one of the best-known predictions of standard economic theory*”:  **The effect of the minimum wage on the employment.**
 
-### 1_1_1 Card and Krueger's Data. 
+Since the 1970 economics’ literature argue about this effect and it’s well know that an increase in the minimum wage leads to increase the unemployment rate on the weakest part of the employment force (*teenage one*)
+This prediction says that an increase of a 10% in the federal minimum wage leads to a reduction between one and three percent in a teenage employment. 
+
+Despite that, * Card and Krueger* figure out that also if the past studies are now accepted and seen as credible, the prediction of this effect in a number of recent studies based on cross-sectional comparison have estimated negligible or even marginally positive employment effects.
+
+In their meta-analysis *Card and Krueger* grouped a group of fifteen studies since 1970 to 1992. 
+What they expected was to find, since the conclusions was always more or less the same, a positive correlation between the sample size of the studies and the t-ratio of their coefficient. 
+
+Just about it, it’s important to say that recent studies has more observation than the previous one also because of historical reason. 
+
+Their analysis builds on the hypothesis that the literature contains an unbiased sample of the coefficients and t-ratio due to the different on the sample size as argue before. 
+
+Otherwise, their findings was difficult to reconcile with their null hypothesis, so they explain that this result may be due to the tendency for statistically significant results to be overrepresented in the published literature, the author’s to see publication their studying could  (voluntarily or not) have been affected by publication bias and/or specification searching. 
+
+# Our implementation
+
+Our task it’s to implement the *Card and Krueger*’s dataframe we searched and found three more studies: 
+
+* The Impact of the National Minimum Wage on Employment (2011)
+    * *Jinlan Ni* , *Guangxin Wang* and *Xianguo Yao*
+* The impact of minimum wage on employment in Poland (2012)
+    *	*Aleksandra Majchrowska* and *Zbigniew Żółkiewski*
+* Impact of Minimum Wages on Employment (2015)
+    * *Eewley et al.* 
+  
+## Data Summarize {.tabset}
+
+### Card and Krueger's Data. 
 
 ```{r, echo = F}
 
@@ -31,14 +57,23 @@ kable(head(dt, 15), booktabs = TRUE) %>%
 
 ```
 
-### 1_1_2 Our implementation.  
+In the next session you can see the original Dataframe, the implemented data frame and the full dataframe aggregate; follow by a legend for the variable. 
+Then we’re going to proceed with three more chapter, in each chapter you can see the model or graph estimated by *Card and Krueger* follow by the same study but on our implemented dataframe. 
+
+### Our implementation.  
 ```{r, echo = F}
 kable(head(dt [16:18, 1:14]), booktabs = TRUE) %>%
   kable_styling(font_size = 11)
 
 ```
 
-### 1_1_3 Meta analysis Data Frame 
+Our result are based on sample size really huge, but their t-stat doesn't seem highly significant and that’s in line with the *Card and Krueger* prediction. 
+
+In the next session you can see the original Dataframe, the implemented data frame and the full dataframe aggregate; follow by a legend for the variable. 
+Then we’re going to proceed with three more chapter, in each chapter you can see the model or graph estimated by *Card and Krueger* follow by the same study but on our implemented dataframe. 
+
+
+### Meta analysis Data Frame 
 
 ```{r, echo = F}
 kable(head(dt, 18), booktabs = TRUE) %>%
@@ -46,8 +81,14 @@ kable(head(dt, 18), booktabs = TRUE) %>%
 
 ```
 
-## 1_2 Variable
 
+
+
+In the next session you can see the original Dataframe, the implemented data frame and the full dataframe aggregate; follow by a legend for the variable. 
+Then we’re going to proceed with three more chapter, in each chapter you can see the model or graph estimated by *Card and Krueger* follow by the same study but on our implemented dataframe. 
+
+
+## variable
 as we can see they used a set of 15 studies and we went to implement with three studies most recent. 
 
 the variable that they use was 12: 
@@ -58,7 +99,7 @@ the variable that they use was 12:
 - degrees of freedom (df), 
 - coefficient of the minimum wage variable in absolute terms2 (coef), 
 - number of explanatory variables of the model (no_exp_var), 
-- the error of the model (error) `[also log and sqrt_log of error.]`
+- the error of the model (error) [Computing log and sqrt_log of error.]`
 - and three dummy varibale: 
   - log_spec
     - this variable is set to 1 when the author used a logarithmic specification for the model
