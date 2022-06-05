@@ -1,0 +1,543 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  9 pt,
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usetheme[]{Warsaw}
+\usecolortheme{lily}
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Time Series Minimum Wage Studies Meta-Analysis - Presentation},
+  pdfauthor={Gabriele Stella, Weida Pan, Karan Kashyap},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Time Series Minimum Wage Studies Meta-Analysis - Presentation}
+\author{Gabriele Stella, Weida Pan, Karan Kashyap}
+\date{June, 2022}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}[fragile]
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{load}\NormalTok{(}\StringTok{\textquotesingle{}Data/Environment.Rdata\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\end{frame}
+
+\begin{frame}[fragile]{Introduction}
+\protect\hypertarget{introduction}{}
+\begin{itemize}
+\item
+  our project is based on the paper written by \emph{David Card \& Alan
+  B. Krueger} in 1995 regarding research of the best-known predictions
+  of standard economic theory that an increase in the minimum wage will
+  lower employment of low-wage workers. Their result indicates that an
+  increase of 10\% in the minimum wage as a result a reduction between
+  1-3 \% in teenage employment.
+\item
+  The main idea of our project is to reproduce their research by add our
+  dataframe via Meta-Analysis
+\item
+  In this work, we're going to implement the previous meta analysis with
+  3 most recent studies.
+\item
+  requirements to re-run the obtained results are:
+\end{itemize}
+
+\texttt{R\ version\ 4.1.3}, \texttt{rmarkdown\ 2.14},
+\texttt{tidyverse\ 1.3.1}, \texttt{stargazer\ 5.2.3},
+\texttt{rcompanion\ 2.4.15}.
+\end{frame}
+
+\begin{frame}{Meta-Analysis}
+\protect\hypertarget{meta-analysis}{}
+\begin{itemize}
+\item
+  A meta-analysis is a statistical analysis that combines the results of
+  multiple scientific studies. Meta-analyses can be performed when there
+  are multiple scientific studies addressing the same question, with
+  each individual study reporting measurements that are expected to have
+  some degree of error.
+\item
+  The aim then is to use approaches from statistics to derive a pooled
+  estimate closest to the unknown common truth based on how this error
+  is perceived. Meta-analytic results are considered the most
+  trustworthy source of evidence by the evidence-based medicine
+  literature
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Data (1/3)}
+\protect\hypertarget{data-13}{}
+\begin{itemize}
+\item
+  the professor give us the Data of the \emph{Card and krueger's
+  Meta-Ananlysis}, but in that table missing three variable:
+
+  \begin{itemize}
+  \item
+    information about teenager sub-sample
+  \item
+    square root of degree of freedom
+  \item
+    logarithm of square root of degree of freedom
+  \end{itemize}
+\item
+  we would be able to calculate the last two, but also reading the paper
+  of the others author we couldn't find enough information about
+  teenager sub-sample.
+\item
+  The original study includes 15 observations of 14 variables by year
+  1992.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Data (2/3)}
+\protect\hypertarget{data-23}{}
+\begin{itemize}
+\item
+  our implementation concern:
+
+  \begin{itemize}
+  \item
+    J\emph{inlan Ni , Guangxin Wang \& Xianguo Yao}, ``Impact of Minimum
+    Wages on Employment'', \textbf{2011}
+  \item
+    \emph{Majchrowska and Zolkiew}, ``The Impact of the National Minimum
+    Wage on Employment'', \textbf{2012}
+  \item
+    \emph{Bewley et al.}, ``The Impact of the National Minimum Wage on
+    Employment'', \textbf{2015}
+  \end{itemize}
+\item
+  Below we will conduct two regression models which present by graph and
+  table, first we'll use just the previous fifteen studies to reproduce
+  the Card and Krueger's M-A, then we'll implement with our data and
+  we'll see if the study keeps its validity
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Data (3/3)}
+\protect\hypertarget{data-33}{}
+\begin{block}{\textbf{t\_stat}}
+\protect\hypertarget{t_stat}{}
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   0.450   1.475   1.945   1.949   2.208   4.430
+\end{verbatim}
+\end{block}
+
+\begin{block}{\textbf{coef}}
+\protect\hypertarget{coef}{}
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.0520  0.0775  0.0980  0.1345  0.2042  0.2700
+\end{verbatim}
+\end{block}
+
+\begin{block}{\textbf{df}}
+\protect\hypertarget{df}{}
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   31.00   56.50   93.00   88.17  105.75  157.00
+\end{verbatim}
+\end{block}
+\end{frame}
+
+\begin{frame}{procedure}
+\protect\hypertarget{procedure}{}
+\begin{itemize}
+\item
+  Now we're going to show our reproduction of the \emph{Card and
+  Krueger} study and then we'll compare their result with the same study
+  implemented with our implementation.
+\item
+  We followed step by step their analysis, the first figure shows us the
+  correlation between t\_stat and logarithm of square root of degree of
+  freedom.
+\item
+  As you could see our result are consistent with the previuos
+  Meta-Analysis.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Relation of Estimated t-Ratio to Sample Size (1/2)}
+\protect\hypertarget{relation-of-estimated-t-ratio-to-sample-size-12}{}
+-Graph Explanation: In the below graph we can see that with big
+samples(12,3,4,9,15) given the same effect size has T-Statistics less
+than 2, whereas smaller sample size somehow have just above 2(1,4,6,2).
+
+\includegraphics{Presentation_files/figure-beamer/unnamed-chunk-5-1.pdf}
+\end{frame}
+
+\begin{frame}{Relation of Estimated t-Ratio to Sample Size (2/2)}
+\protect\hypertarget{relation-of-estimated-t-ratio-to-sample-size-22}{}
+Graph Explanation: In the below graph we can see that the newly added
+data with bigger sample given the same effect has T-Statistics very
+close to 2.(16,17,18). It means it has more precises estimates.
+
+\includegraphics{Presentation_files/figure-beamer/unnamed-chunk-6-1.pdf}
+\end{frame}
+
+\begin{frame}{Procedure}
+\protect\hypertarget{procedure-1}{}
+\begin{itemize}
+\item
+  In order to control the potential impact of other research
+  characteristics on this dependence, we performed regressions with the
+  logarithm of absolute t-ratio as the dependent variable selected
+  independent variables were the logarithm of the square root of degrees
+  of freedom, a number of explanatory variables in given research, and
+  binary variables indicating whether the model specification in given
+  research was logarithmic and if the autoregressive correction was
+  implemented.
+\item
+  As we could see the graph shows a negative relationship between the t
+  ratios and the degrees of freedom. The coefficient on the square root
+  of the degrees of freedom is quite far from 1, its theoretical
+  expectation. The inclusion of additional explanatory variables does
+  not change the sign of the coefficient or reduce its effect.
+\item
+  Next, we will present the reproduced regressions in Table which gives
+  us more information about the correlation. Furthermore, due to the
+  fact the study number 7 is considered as biased data set, therefore we
+  will also conduct table to analysis the result which excludes study
+  number 7.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Descreptive Regression Models (1/2)}
+\protect\hypertarget{descreptive-regression-models-12}{}
+\begin{itemize}
+\tightlist
+\item
+  The striking pattern to notice that most of this studies have
+  T-statistics just above 2 but in this case when they do regression the
+  log t-stat on log degree of freedom instead of getting a slope of 1
+  they get a negative slope -0.94, This is deeply problematic if it was
+  zero then also it was problematic but now it is negative, as seen in
+  Relation of Estimated t-Ratio to Sample Size the previous graph
+  cluster with big sample size given the same effect size which should
+  have bigger t-statistics is actually getting a zero.
+\end{itemize}
+
+\begin{table}[!htbp] \centering 
+
+  \label{} 
+\footnotesize 
+\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-4} 
+\\[-1.8ex] & \multicolumn{3}{c}{log(t\_stat)} \\ 
+\\[-1.8ex] & (1) & (2) & (3)\\ 
+\hline \\[-1.8ex] 
+ l\_sqrt\_df & $-$0.81 & $-$0.64 & $-$0.94 \\ 
+  & (0.69) & (0.66) & (0.62) \\ 
+  autoreg\_correction &  & $-$0.07 & $-$0.11 \\ 
+  &  & (0.27) & (0.24) \\ 
+  log\_spec &  & $-$0.55$^{*}$ & $-$0.63$^{**}$ \\ 
+  &  & (0.28) & (0.26) \\ 
+  no\_exp\_var &  &  & 0.05$^{*}$ \\ 
+  &  &  & (0.03) \\ 
+  Constant & 2.31 & 2.41 & 2.61$^{*}$ \\ 
+  & (1.49) & (1.40) & (1.27) \\ 
+ \hline \\[-1.8ex] 
+Observations & 15 & 15 & 15 \\ 
+R$^{2}$ & 0.10 & 0.33 & 0.50 \\ 
+Adjusted R$^{2}$ & 0.03 & 0.15 & 0.30 \\ 
+Residual Std. Error & 0.50 (df = 13) & 0.47 (df = 11) & 0.43 (df = 10) \\ 
+F Statistic & 1.37 (df = 1; 13) & 1.83 (df = 3; 11) & 2.51 (df = 4; 10) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+\end{frame}
+
+\begin{frame}{Descreptive Regression Models (2/2)}
+\protect\hypertarget{descreptive-regression-models-22}{}
+\begin{itemize}
+\tightlist
+\item
+  The striking pattern to notice that when we added 3 new variables
+  16,17,18 and did regression the log t-stat on log degree of freedom
+  instead of getting a slope of 1 we got a negative slope -0.40 which is
+  better than -0.94.
+\end{itemize}
+
+\begin{table}[!htbp] \centering 
+
+  \label{} 
+\footnotesize 
+\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-4} 
+\\[-1.8ex] & \multicolumn{3}{c}{log(t\_stat)} \\ 
+\\[-1.8ex] & (1) & (2) & (3)\\ 
+\hline \\[-1.8ex] 
+ l\_sqrt\_df & $-$0.54 & $-$0.32 & $-$0.40 \\ 
+  & (0.55) & (0.56) & (0.56) \\ 
+  autoreg\_correction &  & $-$0.03 & $-$0.03 \\ 
+  &  & (0.25) & (0.25) \\ 
+  log\_spec &  & $-$0.50$^{*}$ & $-$0.53$^{*}$ \\ 
+  &  & (0.26) & (0.26) \\ 
+  no\_exp\_var &  &  & 0.03 \\ 
+  &  &  & (0.03) \\ 
+  Constant & 1.76 & 1.68 & 1.59 \\ 
+  & (1.21) & (1.17) & (1.15) \\ 
+ \hline \\[-1.8ex] 
+Observations & 18 & 18 & 18 \\ 
+R$^{2}$ & 0.06 & 0.26 & 0.33 \\ 
+Adjusted R$^{2}$ & $-$0.001 & 0.10 & 0.12 \\ 
+Residual Std. Error & 0.47 (df = 16) & 0.44 (df = 14) & 0.44 (df = 13) \\ 
+F Statistic & 0.98 (df = 1; 16) & 1.60 (df = 3; 14) & 1.58 (df = 4; 13) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+\end{frame}
+
+\begin{frame}{is it t-statistics always 2?}
+\protect\hypertarget{is-it-t-statistics-always-2}{}
+-Another sort of meta-analysis compares the size of each study's
+coefficient to its estimated standard error. If the same statistical
+model remains true throughout time, there should be no systematic link
+between the estimated coefficients and their standard errors. However,
+if publication bias causes studies with t ratios greater than 2 to be
+published, we would expect to discover a positive association between
+the magnitude of the estimated employment effect and its standard
+errors. Assume that journals have a rule of only publishing papers with
+t ratios greater than 2, and that authors adjust their specifications
+(by shifting functional forms, changing the list of included variables,
+and so on) until they reach such a t ratio. Therefore we find many
+published paper with t-ratios equal to or just above 2.
+\end{frame}
+
+\begin{frame}[fragile]{Histogram}
+\protect\hypertarget{histogram}{}
+In statistics, the ``normal distribution'' is the most widely used
+distribution. A normal distribution has a histogram that is bell-shaped
+and symmetric around the mean. Kurtosis and skewness are words used to
+characterize deviations from normality. In the below graph we can see
+the positive skew this means that the right side's tail is longer than
+the left side's tail, and the majority of the values are to the somewhat
+left of the mean. This is mostly due to the fact that there is a very
+high upper restriction on intake but no lower limit.
+
+\begin{verbatim}
+## Warning: package 'rcompanion' was built under R version 4.1.3
+\end{verbatim}
+
+\includegraphics{Presentation_files/figure-beamer/unnamed-chunk-9-1.pdf}
+\end{frame}
+
+\begin{frame}{Procedure}
+\protect\hypertarget{procedure-2}{}
+\begin{itemize}
+\item
+  Now we're going to plot absolute value of the minimum-wage effect
+  against their standard error.
+\item
+  This relation needs to looking these correlation, but also to see if
+  the coefficients estimatedvare effectively 2 times their standard
+  error (\emph{to see these we'll implement our graphs with a line that
+  it's 2 times the standard error})
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Relation of Estimated Employment to Standard Error (1/2)}
+\protect\hypertarget{relation-of-estimated-employment-to-standard-error-12}{}
+\begin{itemize}
+\tightlist
+\item
+  Graph Explanation - This is another way of looking at the data where
+  we have standard error of estimate and estimated elasticity effect,
+  The graph plot out 2 times the standard error and you can see the
+  incredible clustering of studies right above 2 times of the standard
+  error (13,1,10,4,2,6). This is very unnatural, The most concerning
+  thing to observe here is that studies with less standard error
+  (13,1,11,8,14,5) are well powered studies. Probably this are most
+  reliable studies.
+\end{itemize}
+
+\includegraphics{Presentation_files/figure-beamer/unnamed-chunk-10-1.pdf}
+\end{frame}
+
+\begin{frame}{Relation of Estimated Employment to Standard Error (2/2)}
+\protect\hypertarget{relation-of-estimated-employment-to-standard-error-22}{}
+\begin{itemize}
+\tightlist
+\item
+  When we added new studies we can observe that (17,18) have less
+  standard errror where has 16 have high standard error. Thus we can
+  assume with this that studies (17,18) are more reliable then study 16.
+\end{itemize}
+
+\includegraphics{Presentation_files/figure-beamer/unnamed-chunk-11-1.pdf}
+\end{frame}
+
+\begin{frame}{conclusion}
+\protect\hypertarget{conclusion}{}
+Our findings are consistent with the original meta-analysis by Card and
+Krueger (1995), who argue that these countrintuitive results are caused
+by the fact that, when the available data are not too large, the norms
+used by researchers make them were able to find a significant negative
+correlation between minimum wages and their expected youth employment.
+However, due to its fragility, the significance decreases as more data
+is used. Our supplementary paper confirms that this trend in research
+bias is critical and still exists, with lower t-ratios for papers
+published after the 15 papers studied by Card and Kruger, even with
+larger data samples.
+
+In conclusion, there is strong evidence that research is often biased.
+Lack of self-awareness and excessive trust in existing literature can be
+misleading.
+\end{frame}
+
+\begin{frame}{ended}
+\protect\hypertarget{ended}{}
+\centering  Thank You
+\end{frame}
+
+\end{document}
