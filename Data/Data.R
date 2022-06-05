@@ -177,7 +177,7 @@ tbl2 = stargazer(model_1_new, model_2_new, model_3_new, type = 'latex', digits =
                  font.size = 'footnotesize', no.space = TRUE)
 tbl2 = sub('^.+\\caption.+$','', tbl2)
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-sink(file="session_info.txt")
+sink(file="Data/session_info.txt")
 sessionInfo()
 
 save.image(file = "Data/Environment.RData") #we saved all the Data-Enviroment in a file .RData, then it's enough recall it to use in the presentation
